@@ -1,0 +1,35 @@
+{
+  "name": "world",
+  "children": [
+    {
+      "name": "Electricity",
+      "color": "#037BC1",
+      "children": [],
+      "weight": 27
+    },
+    {
+      "name": "Transportation",
+      "color": "#4688c2",
+      "children": [],
+      "weight": 16
+    },
+    {
+      "name": "Manufacturing",
+      "color": "#6696c4",
+      "children": [],
+      "weight": 31
+    },
+    {
+      "name": "Buildings",
+      "color": "#80a4c5",
+      "children": [],
+      "weight": 7
+    },
+    {
+      "name": "Agriculture, <br>forestry and other land use",
+      "color": "#97b2c6",
+      "children": [],
+      "weight": 19
+    }
+  ]
+}

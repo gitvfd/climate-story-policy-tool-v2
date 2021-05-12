@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>d3-voronoi-treemap usage</title>
+    <meta name="description" content="25 Climate Actions">	
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v6.min.js" charset="utf-8"></script>
+    <script src="js/stickyfill.min.js"></script>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://unpkg.com/scrollama"></script>
+    <script src="https://rawcdn.githack.com/Kcnarf/d3-weighted-voronoi/v1.0.1/build/d3-weighted-voronoi.js"></script>
+    <script src="https://rawcdn.githack.com/Kcnarf/d3-voronoi-map/v2.0.1/build/d3-voronoi-map.js"></script>
+    <script src="https://rawcdn.githack.com/Kcnarf/d3-voronoi-treemap/v1.1.1/build/d3-voronoi-treemap.js"></script>
+   	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+   <style></style>
+
+</head>
+
+<body>
+		<nav id="cd-vertical-nav">
+		<ul>
+			<li>
+				<a href="#section1" data-number="1">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Tackling climate change</span>
+				</a>
+			</li>
+			<li>
+				<a href="#section2" data-number="2">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Let’s start with 5!</span>
+				</a>
+			</li>
+			<li>
+				<a href="#section3" data-number="3">
+					<span class="cd-dot"></span>
+					<span class="cd-label">25 actions</span>
+				</a>
+			</li>
+			<li>
+				<a href="#section4" data-number="4">
+					<span class="cd-dot"></span>
+					<span class="cd-label">#ClimateAction</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<a class="cd-nav-trigger cd-img-replace">Open navigation<span></span></a>
+
+
+	<div id="chart-tooltip">
+		<p class="tooltip-title"></p>
+		<p class="tooltip-explanation"></p>
+	</div>
+
+	<div class="hero-image">
+		<div class="hero-text">
+			<h1>I am John Doe</h1>
+			<p>And I'm a Photographer</p>
+		</div>
+	</div>
+
+	<div class="titleSection" id="section1">
+		<div class="titleLabel">Tackling climate change</div>
+	</div>	
+	<div class="narrative">
+
+		<p>By focusing on 5 economic sectors, we can tackle up to 90% of emissions </p>
+		<p>We know that agriculture, buildings, electricity, industry, and transport are the main sources of greenhouse gas emissions.</p>
+		<p>By focusing our efforts on these 5 sectors, we can address emissions at the source, disentangle our world from fossil fuels, and make the transition to clean energy as affordable, fair and smooth as possible.</p>
+		<p>They are a starting point. Together, we need to transform our economies at an unprecedented scale.</p>
+		
+		
+		<br/>
+
+			<div class="titleChart">Direct global Greenhouse Gas emissions (GHG) by economic sector</div>	
+			<div id="treemap">
+				<svg></svg>
+			</div>
+		<br/>
+		<p>We have the knowledge and the tools to make it happen</p>
+		<p>We already have many of the solutions we need to start decarbonising our economies today.</p>
+		<p>There is a lot more governments can do to implement the right mix of policies. These include investments in research and development, education, regulation, taxes and subsidies, and direct environmental measures for public administration itself.</p>
+		<p>For example, we can reduce emissions by ending inefficient fossil fuel subsidies and putting a price on carbon, including for international flights and shipping. Others require innovation in technology, to better manage overall energy systems, for instance. Many will contain trade-offs for policymakers to consider, but all have solutions.</p>
+			
+
+	</div>
+
+	<div class="titleSection" id="section2">
+		<div class="titleLabel">Let’s start with 5! </div>
+	</div>	
+	<div class="narrative">
+		<p> Explore the 5 economic sectors  and 5 policy levers identified to showcase 25 examples of action to <b>get us on track by 2025</b>
+</p>
+	</div>
+
+	<div id="selector">
+		<label class="switch">
+			<input type="checkbox"  id="myCheck" onclick="myFunction()" checked>
+			<span class="slider round">
+				<!--ADDED HTML -->
+				<span class="on">5 SECTORS</span>
+				<span class="off">5 LEVERS</span>
+				<!--END-->
+			</span>
+		</label>
+	</div>
+
+	<section id='scrolly-side'>
+			<div class='scrolly'>
+		
+			<img class='sticky'></img>
+			<article>
+				<div class='step policy' name='agriculture' data-index='0'>
+					<p class="stepTitle">AGRICULTURE</p>
+					<p>Agriculture uses 40% of the world’s land surface and directly accounts for 12% of global greenhouse emissions, including methane from livestock farming, nitrous oxide from manure and fertilisers, and a further 9% from land-use change, including deforestation. </p>
+					<p>Focusing on agriculture and related land-use change will be critical to reduce emissions, and can help replenish our forests and reverse biodiversity loss. There is also potential to use agricultural soils to capture more carbon</p>
+					<p>Helping agriculture cut its greenhouse gas emissions could be part of global programmes to achieve the sustainable development goals. Meeting the triple challenge of environmental sustainability and health, affordable food, and good livelihoods for farmers and their communities means making the right choices and managing trade-offs. This will require national and local action, as well as global co-operation.</p>
+				</div>
+				<div class='step policy' name='buildings' data-index='1'>
+					<p class="stepTitle">BUILDINGS</p>
+					<p>Buildings generate 6% of direct global greenhouse emissions, and an additional 12% of greenhouse gas emissions from electricity use. The residential sector is responsible for nearly two thirds of building emissions, the bulk of which relates to energy demand from home and water heating, cooking and cooling. Emissions from all end-uses must also be addressed. Policies to improve building quality, including environmentally friendly insulation and materials, should be stepped up.</p>
+					<p>For new buildings, construction technologies and methods are much more climate friendly and energy efficient than before, and are becoming in many cases cheaper than conventional construction. Existing buildings can also be made more efficient, through renovation and retrofitting.</p>
+					<p>Building location also matters with respect to emissions: better accessibility to services and opportunities means less travel on a daily basis. Green space near buildings helps capture carbon, enhances air quality and increases well-being. This underlines the role of urban, transport and wider land-use planning to develop more climate-friendly neighbourhoods. </p>
+				</div>
+				<div class='step policy' name='electricity' data-index='2'>
+					<p class="stepTitle">ELECTRICITY</p>
+					<p>Electricity generation is the single largest contributor to greenhouse gas emissions, with many countries still using fossil fuels, particularly coal, to produce electricity. New coal plants are still being built and planned. Emissions from electricity rose by 2.5% in 2018 after having plateaued in the previous six years, despite improvements in energy efficiency and increasing deployment of renewables. Policies to boost the development of clean electricity are essential.  </p>
+					<p>Government strategies must emphasise decarbonising the electricity sector while providing affordable and reliable supply of electricity for all. Renewable technologies are already cost-competitive with fossil fuels in an increasing number of countries. </p>
+					<p>A transition to low-carbon electricity should create vast numbers of jobs: in 2018 alone, the renewable energy sector employed 11 million people globally.</p>
+				</div>
+				<div class='step policy' name='industry' data-index='3'>
+					<p class="stepTitle">INDUSTRY</p>
+					<p>Industry is behind 21% of global greenhouse emissions, which are rising because of urbanisation, population growth and increased standards of living. Most of these emissions come from heavy industries, which produce steel, chemicals, fuels, etc. These industries are hard to decarbonise given their need for high energy intensity. </p>
+					<p>Efforts must be stepped up to find and implement solutions as the global usage of primary materials like iron and steel, cement, aluminium, glass, ceramics, chemicals, pulp and paper, and petrochemicals, is set to nearly double by 2060. Mining and extraction processes are also energy intensive and must be addressed. </p>
+					<p>Research and innovation will need to be scaled up. Re-use and recycling of materials, improvements in manufacturing efficiency, the expansion of service industries and of 3D printing will all help lower emissions, while shifts to low-carbon transport, electricity and buildings must be encouraged.</p>
+				</div>
+				<div class='step policy' name='transport' data-index='4'>
+					<p class="stepTitle">TRANSPORT</p>
+					<p>Emissions from road, rail, aviation and shipping have grown faster than in any other sector in the past 50 years. Today they account for about 14% of total CO2 emissions and are responsible for 24% of all human-made CO2 emissions.</p>
+					<p>Transport relies on oil for 94% of its energy.  Decarbonising passenger mobility and freight transport requires a mix of policies, from pricing and regulation to investment.  Innovative technologies, services, processes and regulations are also needed to make cleaner alternatives more accessible and affordable, and to spur a mass shift in use. Crucial to this process is integrated land-use and transport planning that reduces distances between people and opportunities and that encourages public transport, cycling and walking.</p>
+					<p>Reducing emissions from transport would also greatly improve air quality in our cities, in which over half the world’s population now lives. In 2015, around 3.2 million people died from air pollution, which weighs heavily on the costs of healthcare. </p>
+				</div>
+			</article>
+		</div>
+	</section>
+	<section id='scrolly-side-lever'>
+			<div class='scrolly'>
+			<img class='stickyLever'></img>
+			<article class="lever">
+				<div class='step lever' name='invest' data-index='0'>
+					<p class="stepTitle">INVEST</p>
+					<p>Your government can fund research and development in innovation to boost greener technology and clean infrastructure, and stimulate new economic activities</p>
+				</div>
+				<div class='step lever' name='regulate' data-index='1'>
+					<p class="stepTitle">REGULATE</p>
+					<p>Your government can regulate to control emissions, and constrain, and if necessary, ban polluting activities and chemicals that are toxic for people and the environment.</p>
+				</div>
+				<div class='step lever' name='tax' data-index='2'>
+					<p class="stepTitle">TAX & SUBSIDISE</p>
+					<p>Your government can adjust taxes and subsidies to promote the transition, for instance by applying carbon taxes on emissions, cutting support for carbon-based fuel, or subsidising innovation and energy conservation.</p>
+				</div>
+				<div class='step lever' name='lead' data-index='3'>
+					<p class="stepTitle">LEAD BY EXAMPLE</p>
+					<p>Your government can, through its own daily actions, promote environmentally responsible management of public administrations, nationally and locally, as well as greener subcontracting and rules of conduct for public officials.</p>
+				</div>
+				<div class='step lever' name='inform' data-index='4'>
+					<p class="stepTitle">INFORM & EDUCATE</p>
+					<p>Your government can step up educational programmes, public information campaigns, at school, at home, in the workplace and in town halls, to raise awareness and inspire each other to act.</p>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<br/>
+
+	<div class="titleSection" id="section3">
+		<div class="titleLabel">25 examples of action on climate</div>
+	</div>	
+	<div class="narrative">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+
+	<br/>
+
+	<div class="polTool">
+        <div class="toolBox" id="toolBox">
+            <div class="toolSketch" id="sketch">
+            </div>
+            <div class="scene">
+                <div class="cube" id="cube">
+                    <div class="face front"><img id="sectorPic" src="img/sector-1.png" class="sectorPic"></div>
+                    <div class="face back"><img id="sectorPic2" src="img/sector-1.png" class="sectorPic"></div>
+                    <div class="face right"><img id="areaPic" src="img/area-1.png" class="sectorPic"></div>
+                    <div class="face left"><img id="areaPic2" src="img/area-2.png" class="sectorPic"></div>
+                    <div class="face top"><img src="img/cubeFace.png" class="sectorPic"></div>
+                    <div class="face bottom"><img src="img/cubeFace.png" class="sectorPic"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="policyRecommandation">
+            <div class="headerEmbed">
+                <div class="policyNumber" id="policyNumber">
+                    01
+                </div>
+                <div class="policyTitle" id="policyTitle">Title Policy
+                </div>
+            </div>
+            <div class="policyDesc" id="policyDesc">
+                <p></p>
+            </div>
+            <div id="extraContent">
+                <div id="extraTitle">Explore further</div>
+
+                <div id="extraData"><span id="extraDataTag"> </span> <a id="dataTitle" href="" target=_blank></a>
+                </div>
+
+                <div id="extraReport"><span id="extraReportTag"> </span> <a id="reportTitle" href="" target=_blank></a>
+                </div>
+
+                <div id="extraBrief"><span id="extraBriefTag"> </span> <a id="briefTitle" href="" target=_blank></a></div>
+                
+            </div>
+            <!--<div class="footerEmbed">
+                <a class="linkToReco" href="" target="_blank"><img class="contactButton" src="img/download_symbol.png">LIST OF 25 ACTIONS</a>
+            </div>-->
+        </div>
+    </div>
+
+	<vr/>
+
+	<div class="titleSection" id="section4">
+		<div class="titleLabel">#ClimateAction</div>
+	</div> 
+	<div class="narrative">
+		<p>Governments, businesses, NGOs and citizens must come together to build a cleaner, healthier and more prosperous world for the next generation, and for today.</p>
+		<p>Bring our 25 actions to your conversations with peers and decision-makers.</p>
+	</div>
+    
+	<script src="js/treemap.js" ></script>
+    <script src="js/scroll.js" ></script>
+	<script src="js/sketch.js"></script>
+	<script>
+		function myFunction() {
+			// Get the checkbox
+			var checkBox = document.getElementById("myCheck");
+
+			// If the checkbox is checked, display the output text
+			if (checkBox.checked == true){
+				console.log("checked")
+				document.getElementById("scrolly-side").style.display = "inline"
+				document.getElementById("scrolly-side-lever").style.display = "none"
+			} else {
+				console.log("unchecked")
+				document.getElementById("scrolly-side").style.display = "none"
+				document.getElementById("scrolly-side-lever").style.display = "inline"
+			}
+		}
+		
+	document.getElementById ("myCheck").addEventListener( 'CheckboxStateChange', myFunction())
+	</script>
+
+</body>
