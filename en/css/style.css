@@ -956,7 +956,7 @@ Main components
 /* Touch devices */
 .touch .cd-nav-trigger {
   display: block;
-  z-index: 2;
+  z-index: 200;
   position: fixed;
   bottom: 30px;
   right: 5%;
