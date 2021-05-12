@@ -16,7 +16,7 @@ body{
     padding:10px 0px;
     font-size: 16px;
     font-family: 'Noto Sans', sans-serif;
-    line-height:25px;
+    line-height:30px;
 }
 
 .narrative > p {
@@ -116,7 +116,7 @@ article > p {
     padding:40px;
     font-size: 16px;
     font-family: 'Noto Sans', sans-serif;
-    line-height:25px;
+    line-height:30px;
 	/*min-height: 67vh;*/
     min-height:55vh; /*55% of screen height*/
 	margin-bottom: 4rem;
@@ -171,7 +171,7 @@ article > p {
     padding-left:10vw;
     font-size: 16px;
     font-family: 'Noto Sans', sans-serif;
-    line-height:25px;
+    line-height:30px;
     min-height:30vh; /*55% of screen height*/
 	margin-bottom: 4rem;
 	background-color: white;
@@ -539,7 +539,7 @@ display:flex;
     margin:40px;
     font-family: 'Noto Sans', sans-serif;
     font-size:16px;
-    line-height: 25px;
+    line-height: 30px;
     color:#333333;
 }
 
