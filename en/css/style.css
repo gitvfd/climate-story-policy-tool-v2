@@ -775,6 +775,19 @@ SIDE NAVIGATION
 *********************************************************************************************/
 
 
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-img-replace {
+  /* replace text with a background-image */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
 /* No Touch devices */
 .cd-nav-trigger {
   display: none;
@@ -846,8 +859,8 @@ SIDE NAVIGATION
   transform-origin: 50% 50%;
 }
 .no-touch #cd-vertical-nav .cd-label {
-    font-family: 'Noto Sans', sans-serif;
-    font-size:16px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size:16px;
   position: relative;
   margin-right: 10px;
   padding: .4em .5em;
