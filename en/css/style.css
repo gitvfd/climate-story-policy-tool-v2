@@ -14,13 +14,17 @@ body{
     margin:auto;
     margin-bottom:10px;
     padding:10px 0px;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight:500;
     font-family: 'Noto Sans', sans-serif;
+    color:#3a3a3a;
     line-height:30px;
+    text-align: justify; ;
 }
 
 .narrative > p {
     padding: 0 80px;
+    margin-bottom: 10px;
 }
 
 
@@ -58,25 +62,38 @@ HERO IMAGE
 *********************************************************************************************/
 
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero-image.jpg');
-  width:100%;
-  height: 50%;
+   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  width:100vw;
+  height: 50vh;
+  object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+	position: relative;
+  
 }
 
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+    font-size: 45px;
+    font-weight:500;
+    font-family: 'Oswald', sans-serif;
+
+    text-transform: uppercase;
   color: white;
 }
 
 
+@media (max-width: 800px) {
+
+.hero-text {
+    font-size: 33px;
+}
+}
 
 
 
