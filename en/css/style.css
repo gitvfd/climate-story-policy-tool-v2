@@ -460,6 +460,12 @@ text.light {
 
 @media (max-width: 800px){
 
+    #treemap{
+        width:100%;
+        max-width:600px;
+        min-margin:auto;
+        /*background-color: rgb(230, 235, 233);*/
+    }
     #title {
         font-size: 17px;
         letter-spacing: 0px;
@@ -467,6 +473,12 @@ text.light {
 
 }
 
+@media (max-width: 600px){
+
+    #treemap{
+        margin: 0px 10px;
+    }
+}
 
 
 /********************************************************************************************
@@ -718,9 +730,9 @@ display:flex;
 @media (max-width: 800px){
 
 
-.scene {
+/*.scene {
     display: none;
-}
+}*/
 
 .cube {
     display: none;
@@ -733,8 +745,9 @@ display:flex;
 
 
 .policyRecommandation{
-    margin-left:auto;
-    margin-right:auto;
+    /*margin-left:auto;
+    margin-right:auto;*/
+    margin:0;
     width:100% ;
 }
 
