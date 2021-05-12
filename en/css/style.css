@@ -201,6 +201,7 @@ img.stickyLever {
         display:inline;
         position: relative;
         padding:0;
+	      margin: 5rem 0.5rem;
     }
 
     img.sticky,img.stickyLever {
@@ -380,7 +381,6 @@ TREEMAP
 
 .titleChart{
     width:100%;
-    margin:auto;
     font-family:Noto Sans;
     font-size: 24px;
     font-weight:700;
@@ -463,13 +463,13 @@ text.light {
     #treemap{
         width:100%;
         max-width:600px;
-        min-margin:auto;
         /*background-color: rgb(230, 235, 233);*/
     }
-    #title {
-        font-size: 17px;
-        letter-spacing: 0px;
-    }
+      
+  .titleChart{
+      font-size: 18px;
+      margin:0px 20px;
+  }
 
 }
 
@@ -478,6 +478,13 @@ text.light {
     #treemap{
         margin: 0px 10px;
     }
+  
+  .titleChart{
+      font-size: 17px;
+      margin:0px 20px;
+  }
+
+
 }
 
 
