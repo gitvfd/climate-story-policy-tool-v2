@@ -371,7 +371,7 @@ img.stickyLever {
 
   .step {
     font-size: 17px;
-    margin-bottom: 35rem;
+    margin-bottom: 40rem;
   }
 
   .stepTitle {
@@ -1057,6 +1057,8 @@ Main components
   color: #006fb3;
   font-size: 18px;
   font-size: 0.875rem;
+
+  text-shadow: 1px 1px 1px #fff;
   -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
   -moz-transition: -moz-transform 0.2s, opacity 0.2s;
   transition: transform 0.2s, opacity 0.2s;
