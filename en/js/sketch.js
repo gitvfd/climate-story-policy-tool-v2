@@ -1,5 +1,5 @@
 var widthPol = document.getElementById("sketch").offsetWidth;
-console.log(widthPol)
+
 var heightPol = widthPol;
 
 var cellLength = widthPol/7;

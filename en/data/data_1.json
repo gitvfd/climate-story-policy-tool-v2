@@ -9,25 +9,25 @@
     },
     {
       "name": "Transportation",
-      "color": "#4688c2",
+      "color": "#001939",
       "children": [],
       "weight": 16
     },
     {
       "name": "Manufacturing",
-      "color": "#6696c4",
+      "color": "#002f6c",
       "children": [],
       "weight": 31
     },
     {
       "name": "Buildings",
-      "color": "#80a4c5",
+      "color": "#00459f",
       "children": [],
       "weight": 7
     },
     {
       "name": "Agriculture, <br>forestry and other land use",
-      "color": "#97b2c6",
+      "color": "#0050b9",
       "children": [],
       "weight": 19
     }
