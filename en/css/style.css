@@ -178,7 +178,7 @@ HERO IMAGE
 .surpriselink {
   color: #ffc20e;
   text-shadow: 2px 2px 4px #3A3A3A;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .parent:hover .surprise,
