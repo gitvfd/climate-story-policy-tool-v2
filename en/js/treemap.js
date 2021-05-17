@@ -51,7 +51,7 @@
       });
       
       function initData(rootData) {
-        circlingPolygon = computeCirclingPolygon(treemapRadius);console.log(treemapRadius)
+        circlingPolygon = computeCirclingPolygon(treemapRadius);
         fontScale.domain([0, 40]).range([8*treemapRadius/350, 25*treemapRadius/350]).clamp(true);
         iconScale.domain([0, 40]).range([25*treemapRadius/350, 100*treemapRadius/350]).clamp(true);
       }
@@ -241,7 +241,7 @@
                 tspan.text(line.join(" "))
                 line = [word]
                 lineNumber++
-                console.log(lineNumber)
+                
                 tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", (1 * lineHeight) + 'em').text(word)
             }
             }

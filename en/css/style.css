@@ -175,6 +175,12 @@ HERO IMAGE
   transform: rotate(353deg);
 }
 
+.surpriselink {
+  color: #ffc20e;
+  text-shadow: 2px 2px 4px #3A3A3A;
+  text-decoration: none;
+}
+
 .parent:hover .surprise,
 .parent:focus .surprise {
   display: block;
@@ -204,6 +210,11 @@ HERO IMAGE
   .hero-text {
     font-size: 33px;
   }
+
+
+.surprise {
+  font-size: 44px;
+}
 }
 
 

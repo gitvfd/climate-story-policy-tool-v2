@@ -318,12 +318,33 @@ function policyUpdate(refPolicy){
         }
     })  
 
+   if(['section1', 'section2', 'section3', 'section4'].includes(window.location.href.substr(-8))){
+    if(['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'].includes(window.location.href.substr(0,window.location.href.length-9).substr(-2))){
+        window.history.pushState("object or string", "Page Title", window.location.href.substr(0,window.location.href.length-16)+ "?key=" + refPolicy.substr(-2) + window.location.href.substr(-9) );    
+    }
+    else{
+        window.history.pushState("object or string", "Page Title", window.location.href.substr(0,window.location.href.length-9)+ "?key=" + refPolicy.substr(-2) + window.location.href.substr(-9) );    
+    
+    }
+    
+    }
+    else if (['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'].includes(window.location.href.substr(-2))){
+        window.history.pushState("object or string", "Page Title", window.location.href.substr(0,window.location.href.length-7)+ "?key=" + refPolicy.substr(-2));    
+
+    }
+    else{
+    window.history.pushState("object or string", "Page Title", window.location.href+ "?key=" + refPolicy.substr(-2));       
+    }
 
 
     //update URL
-    window.history.pushState("object or string", "Page Title", "?key=" + refPolicy.substr(-2));
+   // window.history.pushState("object or string", "Page Title", window.location+ "?key=" + refPolicy.substr(-2));
+//window.location.pushState("object or string", "Page Title", "?key=" + refPolicy.substr(-2));
 
+//var urlnew=window.location+"?key=" + refPolicy.substr(-2);
 
+//console.log(window.history.pushState("object or string", "Page Title", window.location+ "?key=" + refPolicy.substr(-2)))
+//window.history.pushState({}, '', urlnew);
 
 
 }
@@ -331,6 +352,7 @@ function policyUpdate(refPolicy){
 
 //start app
 var url=window.location;
+
 var data = [];
 var counter = 0;
 d3.tsv("data/policy.tsv").then( function (temp) {
