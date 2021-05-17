@@ -279,6 +279,7 @@ img.sticky {
   margin: 0;
   top: 5vh;
   left: 0;
+
 }
 
 
@@ -328,6 +329,7 @@ img.stickyLever {
   height: 20%;
   top: 20vh;
   left: 0;
+
 }
 
 @media (max-width: 800px) {
